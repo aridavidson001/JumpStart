@@ -1,5 +1,6 @@
 import { StyleSheet, View, Pressable, Text, Image} from 'react-native';
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { ColorScheme as CS } from '../common/ColorScheme';
 const mainIcon = require('../assets/images/icon.png')
 
 export default function Button({ label, theme }) {
@@ -13,12 +14,23 @@ export default function Button({ label, theme }) {
       </View>
     );
   }
-
+  if (theme == "settings") {
+    return (
+        <View style={[styles.settingsButtonContainer]}>
+            <Pressable
+            onPress={() => alert('You pressed a button.')}>
+      <FontAwesome name="gear" size={40} color={CS.accent}/>
+            </Pressable>
+        </View>
+    )
+  }
   return (
     <View style={styles.buttonContainer}>
         <Pressable style={styles.circleButton} onPress={() => 
         alert('You pressed a button.')}>
-         <Image source={mainIcon} style={styles.image} />
+            <FontAwesome name="bars" size={40} color={CS.accent}/>
+
+            {/* <Image source={mainIcon} style={styles.image} /> */}
          
         </Pressable>
       </View>
@@ -31,16 +43,24 @@ const styles = StyleSheet.create({
     height: 80,
     borderRadius: 18,
   },
+
+
+
+  settingsButtonContainer: {
+    marginHorizontal: 10,
+    alignItems: 'ltr',
+    justifyContent: 'center',
+    padding: 20,
+  },
     buttonContainer: {
-      width: 320,
       marginHorizontal: 10,
       alignItems: 'center',
       justifyContent: 'center',
       padding: 20,
     },
     button: {
-      backgroundColor: "#108ee9",
-      color: "#041014",
+      backgroundColor: CS.buttonColor,
+      color: CS.accent,
       borderRadius: 10,
 
       width: 300,
@@ -50,7 +70,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
     },
     circleButton: {
-        backgroundColor: '#108ee9',
+        backgroundColor: CS.buttonColor,
         width: 80,
         height: 80,
         borderRadius: 80,
@@ -60,7 +80,7 @@ const styles = StyleSheet.create({
     },
 
     buttonLabel: {
-      color: '#000000',
+      color: CS.accent,
       fontSize: 40,
     },
   });

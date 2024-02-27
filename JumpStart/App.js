@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { ColorScheme as CS } from './common/ColorScheme';
 
 import ImageViewer from './components/ImageViewer';
 import Button from './components/Button';
@@ -11,15 +11,15 @@ export default function App() {
       <>
 
       <View style={styles.headerContainer}>
-      <FontAwesome name="gear" size={40} color="#ffff" style={styles.settingsButton}/>
+      <Button theme="settings" label=""/>
       </View>
       
      
       <View style={styles.container}>
 
         <Text style={styles.text}>Jumpstart</Text>
+       
         <View style={styles.imageContainer}>
-
           <ImageViewer placeholderImageSource={mainIcon} />
         </View>
         <Button theme="primary" label="Trick List" />
@@ -33,31 +33,31 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#040e14',
+    backgroundColor: CS.backgroundColor,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   text: {
     alignItems: 'center',
-    color: '#ffff',
+    color: CS.accent,
     justifyContent: 'center',
-    fontSize: 50,
+    fontSize: 50
   },
   headerContainer: {
     flex: 1/9,
     direction: 'ltr',
-    backgroundColor: '#040e14',
+    backgroundColor: CS.backgroundColor,
     justifyContent: 'flex-start',
-    alignContent: 'flex-start', 
+    alignContent: 'flex-start'
   },
   settingsButton:{
     marginTop: 15,
-    marginLeft: 15,
+    marginLeft: 15
   },
   footerContainer: {
     flex: 1/9,
-    backgroundColor: '#040e14',
-    alignItems: 'flex-end',
+    backgroundColor: CS.backgroundColor,
+    alignItems: 'flex-end'
   },
 
 });
