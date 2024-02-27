@@ -8,21 +8,22 @@ import Button from './components/Button';
 const mainIcon = require('./assets/images/icon.png')
 export default function App() {
   return (
-      <><FontAwesome
-      name="gear"
-      size={40}
-      color="#ffff" 
-      style={styles.headerContainer}
-      />
+      <>
+
+      <View style={styles.headerContainer}>
+      <FontAwesome name="gear" size={40} color="#ffff" style={styles.settingsButton}/>
+      </View>
+      
+     
       <View style={styles.container}>
 
-        <Text style={styles.text}>Jump Start</Text>
+        <Text style={styles.text}>Jumpstart</Text>
         <View style={styles.imageContainer}>
 
           <ImageViewer placeholderImageSource={mainIcon} />
         </View>
         <Button theme="primary" label="Trick List" />
-          <Button theme="circle" label="" />
+          <Button theme="circle" label=""/>
         <StatusBar style="auto" />
     
         </View></>
@@ -47,10 +48,14 @@ const styles = StyleSheet.create({
     direction: 'ltr',
     backgroundColor: '#040e14',
     justifyContent: 'flex-start',
-    padding: '20',
+    alignContent: 'flex-start', 
+  },
+  settingsButton:{
+    marginTop: 15,
+    marginLeft: 15,
   },
   footerContainer: {
-    flex: 1/10,
+    flex: 1/9,
     backgroundColor: '#040e14',
     alignItems: 'flex-end',
   },
