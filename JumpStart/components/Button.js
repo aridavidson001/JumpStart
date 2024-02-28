@@ -28,7 +28,7 @@ export default function Button({ label, theme }) {
     <View style={styles.buttonContainer}>
         <Pressable style={styles.circleButton} onPress={() => 
         alert('You pressed a button.')}>
-            <FontAwesome name="bars" size={40} color={CS.accent}/>
+            <FontAwesome name="list" size={40} color={CS.accent}/>
 
             {/* <Image source={mainIcon} style={styles.image} /> */}
          
