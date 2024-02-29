@@ -9,7 +9,7 @@ export default function SettingsButton({onPress}) {
 
         <View style={[styles.settingsButtonContainer]}>
             <Pressable       onPress={onPress}>
-      <FontAwesome name="gear" size={40} color={CS.buttonColor}/>
+      <FontAwesome name="gear" size={40} color={CS.accent1}/>
 
             </Pressable>
         </View>

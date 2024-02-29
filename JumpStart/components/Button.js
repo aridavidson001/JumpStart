@@ -14,21 +14,7 @@ export default function Button({ label, theme }) {
       </View>
     );
   }
-  if (theme == "settings") {
-    return (
-
-        <View style={[styles.settingsButtonContainer]}>
-
-       
-            <Pressable       onPress={() => setModalVisible(!modalVisible)}>
-
-      <FontAwesome name="gear" size={40} color={CS.buttonColor}/>
-
-            </Pressable>
-        </View>
-    )
-  }
-  return (
+return (
     <View style={styles.buttonContainer}>
         <Pressable style={styles.circleButton} onPress={() => 
         alert('You pressed a button.')}>
@@ -49,7 +35,7 @@ const styles = StyleSheet.create({
       padding: 20,
     },
     button: {
-      backgroundColor: CS.buttonColor,
+      backgroundColor: CS.dark1,
       color: CS.buttonText,
       borderRadius: 20,
 
@@ -60,16 +46,19 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
     },
     circleButton: {
-        backgroundColor: CS.buttonColor,
+        backgroundColor: CS.accent1,
         width: 80,
         height: 80,
         borderRadius: 20,
+
         justifyContent: 'center',
         alignItems: 'center',
     },
 
     buttonLabel: {
       color: CS.accent,
+      fontFamily: "Bebas",
+
       fontSize: 40,
     },
   });

@@ -1,4 +1,5 @@
 import { StyleSheet, Image } from 'react-native';
+import { ColorScheme as CS } from '../common/ColorScheme';
 
 export default function ImageViewer({ placeholderImageSource }) {
   return (
@@ -11,5 +12,6 @@ const styles = StyleSheet.create({
     width: 300,
     height: 300,
     borderRadius: 18,
+    tintColor: CS.buttonColor,
   },
 });
