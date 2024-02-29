@@ -1,20 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { StyleSheet, Text, View, Modal  } from 'react-native';
 import { ColorScheme as CS } from './common/ColorScheme';
 
 import ImageViewer from './components/ImageViewer';
 import Button from './components/Button';
+import SettingsButton from './components/SettingsButton';
 
 const mainIcon = require('./assets/images/icon.png')
-export default function App() {
-  return (
-      <>
 
-      <View style={styles.headerContainer}>
-      <Button theme="settings" label=""/>
-      </View>
+export default function App() {
+
+  return (
+    
       
-     
+      <><View style={styles.headerContainer}>
+      <SettingsButton />
+    </View>
       <View style={styles.container}>
 
         <Text style={styles.text}>Jumpstart</Text>
@@ -25,7 +26,6 @@ export default function App() {
         <Button theme="primary" label="Trick List" />
           <Button theme="circle" label=""/>
         <StatusBar style="auto" />
-    
         </View></>
   );
 }
@@ -59,5 +59,14 @@ const styles = StyleSheet.create({
     backgroundColor: CS.backgroundColor,
     alignItems: 'flex-end'
   },
+  optionsContainer: {
+    position: 'absolute',
+    bottom: 80,
+  },
+  optionsRow: {
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+
 
 });

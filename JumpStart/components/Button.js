@@ -1,9 +1,9 @@
-import { StyleSheet, View, Pressable, Text, Image} from 'react-native';
+import { StyleSheet, View, Pressable, Text, Image, Modal, useState } from 'react-native';
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { ColorScheme as CS } from '../common/ColorScheme';
-const mainIcon = require('../assets/images/icon.png')
 
 export default function Button({ label, theme }) {
+
   if (theme == "primary") {
     return (
       <View style={[styles.buttonContainer]}>
@@ -16,10 +16,14 @@ export default function Button({ label, theme }) {
   }
   if (theme == "settings") {
     return (
+
         <View style={[styles.settingsButtonContainer]}>
-            <Pressable
-            onPress={() => alert('You pressed a button.')}>
-      <FontAwesome name="gear" size={40} color={CS.accent}/>
+
+       
+            <Pressable       onPress={() => setModalVisible(!modalVisible)}>
+
+      <FontAwesome name="gear" size={40} color={CS.buttonColor}/>
+
             </Pressable>
         </View>
     )
@@ -30,7 +34,6 @@ export default function Button({ label, theme }) {
         alert('You pressed a button.')}>
             <FontAwesome name="bars" size={40} color={CS.accent}/>
 
-            {/* <Image source={mainIcon} style={styles.image} /> */}
          
         </Pressable>
       </View>
@@ -38,20 +41,7 @@ export default function Button({ label, theme }) {
 }
 
 const styles = StyleSheet.create({
-    image: {
-    width: 80,
-    height: 80,
-    borderRadius: 18,
-  },
 
-
-
-  settingsButtonContainer: {
-    marginHorizontal: 10,
-    alignItems: 'ltr',
-    justifyContent: 'center',
-    padding: 20,
-  },
     buttonContainer: {
       marginHorizontal: 10,
       alignItems: 'center',
@@ -60,8 +50,8 @@ const styles = StyleSheet.create({
     },
     button: {
       backgroundColor: CS.buttonColor,
-      color: CS.accent,
-      borderRadius: 10,
+      color: CS.buttonText,
+      borderRadius: 20,
 
       width: 300,
       height: 80,
@@ -73,8 +63,7 @@ const styles = StyleSheet.create({
         backgroundColor: CS.buttonColor,
         width: 80,
         height: 80,
-        borderRadius: 80,
-        borderWidth: 1,
+        borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
     },
